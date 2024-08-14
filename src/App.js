@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import CommentForm from './components/CommentForm';
 import CommentList from './components/CommentList';
+import { handleSortByDate } from './utils'; 
 import './App.css';
 
 const App = () => {
