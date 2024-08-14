@@ -48,14 +48,10 @@ const App = () => {
   };
 
    const sortByDate = () => {
-    console.log('Sort button clicked'); // Debugging log
-    try {
-      const sortedComments = handleSortByDate(comments);
-      setComments(sortedComments);
-    } catch (error) {
-      console.error(error.message);
-    }
-  };
+  console.log('Sort button clicked'); // Debugging log
+  const sortedComments = handleSortByDate([...comments]);
+  setComments(sortedComments);
+};
 
   return (
     <div className="App">
