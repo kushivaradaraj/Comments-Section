@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import CommentForm from './components/CommentForm';
 import CommentList from './components/CommentList';
-import { handleSortByDate } from './utils'; 
-import './App.css'; 
+import './App.css';
 
 const App = () => {
   const [comments, setComments] = useState([]);
@@ -11,8 +10,6 @@ const App = () => {
     const storedComments = JSON.parse(localStorage.getItem('comments'));
     if (Array.isArray(storedComments)) {
       setComments(storedComments);
-    } else {
-      setComments([]);
     }
   }, []);
 
@@ -24,17 +21,29 @@ const App = () => {
     const newComment = { ...comment, id: Date.now(), date: new Date().toISOString(), parentId: comment.parentId || null };
     setComments([newComment, ...comments]);
   };
+  const handleReaction = (commentId, emoji) => {
+    setComments(comments.map(comment => {
+      if (comment.id === commentId) {
+        const reactions = { ...comment.reactions };
+        reactions[emoji] = (reactions[emoji] || 0) + 1;
+        return { ...comment, reactions };
+      }
+      return comment;
+    }));
+  };
 
-  const editComment = (id, text) => {
-    const updatedComments = comments.map(comment => 
-      comment.id === id ? { ...comment, text } : comment
-    );
-    setComments(updatedComments);
+  const handleSortByDate = (comments) => {
+    return comments.slice().sort((a, b) => new Date(b.date) - new Date(a.date));
+  };
+
+  const editComment = (id, newText) => {
+    setComments(comments.map(comment => 
+      comment.id === id ? { ...comment, text: newText } : comment
+    ));
   };
 
   const deleteComment = (id) => {
-    const updatedComments = comments.filter(comment => comment.id !== id);
-    setComments(updatedComments);
+    setComments(comments.filter(comment => comment.id !== id));
   };
 
   const sortByDate = () => {
@@ -61,9 +70,11 @@ const App = () => {
         onEdit={editComment}
         onDelete={deleteComment}
         onReply={addComment}
+        onReact={handleReaction}
       />
     </div>
   );
 };
 
 export default App;
+

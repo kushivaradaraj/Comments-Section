@@ -2,7 +2,7 @@
 import React from 'react';
 import Comment from './Comment';
 
-const CommentList = ({ comments, onEdit, onDelete, onReply }) => {
+const CommentList = ({ comments, onEdit, onDelete, onReply, onReact }) => {
   const renderComments = (comments, parentId = null) => {
     return comments
       .filter(comment => comment.parentId === parentId)
@@ -13,9 +13,11 @@ const CommentList = ({ comments, onEdit, onDelete, onReply }) => {
             name={comment.name}
             text={comment.text}
             date={comment.date}
+            reactions={comment.reactions} // Pass reactions prop
             onEdit={onEdit}
             onDelete={onDelete}
             onReply={onReply}
+            onReact={onReact} // Pass onReact prop
           />
           {renderComments(comments, comment.id)}
         </div>

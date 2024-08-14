@@ -135,3 +135,149 @@ element.style {
   background-color: rgba(128, 128, 128, 0.129);
   position: relative; 
 }
+
+/* App.css */
+
+/* App.css */
+
+body {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.light-mode {
+  background-color: #ffffff;
+  color: #000000; /* Set font color for light mode */
+}
+
+.dark-mode {
+  background-color: #3333338e;
+  color: #ffffff; /* Set font color for dark mode */
+}
+
+.app {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.theme-toggle-button {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #007BFF;
+  color: white;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.theme-toggle-button:hover {
+  background-color: #0056b3;
+}
+
+
+/* Add this to your CSS file */
+.reaction-popup {
+  position: absolute;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.reaction-popup button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.reactions {
+  margin-top: 10px;
+}
+
+/* Add this to your CSS file */
+.delete-button {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #888;
+  transition: color 0.3s;
+}
+
+/* .delete-button:hover {
+  color: #e74c3c;
+} */
+
+/* Add this to your CSS file */
+
+
+/* Add this to your CSS file */
+
+/* Updated styles for ReactionPopup */
+.reaction-popup {
+  position: absolute;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 40px; /* More rounded corners */
+  padding: 5px; /* Smaller padding */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  top: calc(100% + 2px); /* Position just below the button with a gap of 2px */
+  left: 0; /* Align to the left of the parent */
+  width: auto; /* Adjust width to fit content */
+  min-width: 100px; /* Minimum width to ensure it doesn't get too small */
+}
+
+.reaction-popup button {
+  background: none;
+  border: none;
+  font-size: 20px; /* Keep emojis the same size */
+  cursor: pointer;
+  margin: 2px; /* Smaller margin */
+  transition: transform 0.2s, background-color 0.2s; /* Add transition for background color */
+}
+
+.reaction-popup button:hover {
+  transform: scale(1.2);
+  background-color: #f0f0f0; /* Light gray background on hover */
+  border-radius: 50%; /* Make the emoji buttons rounded on hover */
+}
+
+.reaction-popup .delete-button:hover {
+  background-color: transparent; /* No background color on hover for delete button */
+}
+
+/* Styles for Comment component */
+.comment {
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.reactions {
+  margin-top: 10px;
+}
+
+.reactions span {
+  margin-right: 10px;
+}
+
+.delete-button {
+  background: none; /* Remove background color */
+  border: none;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background: none; /* Ensure no background color on hover */
+  color: #000;
+}
