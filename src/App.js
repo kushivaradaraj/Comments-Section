@@ -46,7 +46,7 @@ const App = () => {
     setComments(comments.filter(comment => comment.id !== id));
   };
 
-  const sortByDate = () => {
+   const sortByDate = () => {
     console.log('Sort button clicked'); // Debugging log
     try {
       const sortedComments = handleSortByDate(comments);
