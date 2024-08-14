@@ -1,38 +1,137 @@
+/* src/App.css */
+
+/* Import Poppins font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
 .App {
-  text-align: center;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  /* font-family: Arial, sans-serif; */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input, textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007BFF;
   color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background-color: #0056b3;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+textarea {
+  height: 60px;
+}
+
+button[style] {
+  background: none;
+  color: #555;
+  cursor: pointer;
+}
+
+button[style]:hover {
+  color: #000;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.comment-box {
+  background-color: rgba(128, 128, 128, 0.2); 
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
+  padding: 10px; 
+  margin-bottom: 10px; 
+  color: #000; 
+}
+element.style {
+  border: 1px solid rgb(204, 204, 204);
+  padding: 10px;
+  margin: 10px 0px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.sort-button-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.sort-button {
+  padding: 10px;
+  background-color: #8a8d8dea;
+  color: rgb(16, 1, 1);
+  border: none;
+  border-radius: 5px;
+  border-color: #000;
+  cursor: pointer;
+}
+
+.sort-button:hover {
+  background-color: #419ffd;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .sort-button-container {
+    justify-content: center;
+    width: 100%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .sort-button {
+    width: 100%;
+    padding: 12px;
   }
+}
+
+@media (max-width: 480px) {
+  .sort-button-container {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .sort-button {
+    width: 100%;
+    padding: 14px;
+  }
+}
+
+
+.comment-box {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  position: relative; 
+}
+
+.reply-box {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px 0 10px 20px;
+  border-radius: 5px;
+  background-color: rgba(128, 128, 128, 0.129);
+  position: relative; 
 }
