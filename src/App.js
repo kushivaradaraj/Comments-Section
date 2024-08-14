@@ -33,9 +33,9 @@ const App = () => {
     }));
   };
 
-  const handleSortByDate = (comments) => {
-    return comments.slice().sort((a, b) => new Date(b.date) - new Date(a.date));
-  };
+  // const handleSortByDate = (comments) => {
+  //   return comments.slice().sort((a, b) => new Date(b.date) - new Date(a.date));
+  // };
 
   const editComment = (id, newText) => {
     setComments(comments.map(comment => 
